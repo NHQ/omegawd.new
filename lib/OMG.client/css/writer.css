@@ -1,0 +1,55 @@
+#editor { 
+    margin: 0;
+    position: absolute;
+    top:0;
+    left:200px;
+    right:200px;
+    bottom:0;
+    overflow: hidden;
+    font-family: 'Droid Sans Mono', 'Menlo', 'Ubuntu Mono', 'Droid Sans Mono', 'Courier New', monospace;
+}
+.ace_editor {
+    position: absolute;
+    font-family: 'Menlo', 'Ubuntu Mono', 'Droid Sans Mono', 'Courier New', monospace;
+    font-size:12px;
+    
+}
+
+.ace_scroller {
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.ace_content {
+    position: absolute;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    cursor: text;
+}
+.ace_sb {
+  visibility:hidden;
+}
+#options {
+  display:none;
+  position:fixed;
+  top:70px;
+  right:30px;
+  text-align:left;
+  
+}
+#showOptions {
+  position: fixed;
+  top: 30px;
+  right: 70px;
+  font-size:50px;
+  color:#fff;
+}
+::selection {
+  background-color:transparent;
+}
+#showOptions:hover {
+  cursor:pointer;
+  -webkit-transform: scale(2);
+}
