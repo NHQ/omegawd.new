@@ -1,0 +1,116 @@
+body
+  width: 100%
+
+body
+  height: 100%
+body
+  margin: 0px
+
+body
+	padding: 0px
+
+body
+	background-image: -moz-radial-gradient(51% 43%, hsla(72, 20, 96.6, 1) 11%, hsla(72, 0, 36.6, 1))
+
+body
+	background-image: -o-radial-gradient(51% 43%, hsla(72, 20, 96.6, 1) 11%, hsla(72, 0, 36.6, 1))
+
+body
+	background-image: -webkit-radial-gradient(39% 43%, hsla(72, 33, 96.6, 1) 11%, hsla(72, 0, 36.6, 1))
+
+body
+  overflow: hidden
+
+*
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+#terminal
+	width: 62%
+	height: 100%
+	padding: 0
+	margin: 0
+	position: absolute
+	top: 0
+	left: 0
+
+#options
+  width: 38%
+  height: 100%
+  position: absolute
+  top: 0
+  right: 0
+  z-index: 1
+  
+#menuOptions
+  width: 67%
+  top: 23.5%
+  position:absolute
+  font-size: 37px
+
+.menuButton
+  display: block
+  margin: 13px 0
+  color: hsla(72, 0, 36.6, 1)
+  text-shadow: 2px 0px 5px #eee
+  text-decoration:none
+  font-weight: 500
+  z-index: 1
+  -webkit-transform: scaleX(1.5)
+
+.menuButton:hover 
+  color: hsla(58, 24, 34, 1)
+
+.menuButton:hover:after
+  content:  "  ∆"
+  
+#showOptions
+  position: fixed
+  top: 30px
+  right: 70px
+  font-size:50px
+  color:#533
+
+::selection {
+  background-color:transparent;
+}
+
+#showOptions:hover
+  cursor:pointer
+  -webkit-transform: scale(2)
+
+#box
+  width: 350px
+  height: 33px
+  position:absolute;
+  -webkit-perspective: 1200px
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0)
+  -moz-perspective: 1200px
+  -moz-transform: matrix(1, 0, 0, 1, 0, 0)
+  -o-perspective: 1200px
+  display: none;
+  
+#logo 
+  width: 300px
+  font-family:Times;
+  font-size:400px;
+  position:absolute;
+  -webkit-transform-style: preserve-3d
+  -webkit-transform: rotateY(-45deg)
+  -o-transform-style: preserve-3d
+  -o-transform: rotateY(-45deg)
+  line-height: 0
+
+for n in logo
+  .omega_{n}
+    left: n px
+    z-index: 0 - n
+    color: hsla(145, 0 + n / 2, 86 + n / 3, .5 + n * (.07))
+
+  .dot{n}
+    left: 73 + n px 
+    top: -137 px
+    z-index: 0 - n
+    color: hsla(145, 0 + n / 2, 86 + n / 3, .5 + n * (.07))
+    -moz-transform: translate(20px, -13px)
