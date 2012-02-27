@@ -46,7 +46,8 @@ body {
   top: 0;
   right: 0;
   z-index: 1;
-  border-left: 15px double #333;
+  border-left: 11px solid rgba(93,93,93,0.60);
+  box-shadow: inset 3px 0 3px #333, -3px 0 3px #333;
 }
 #menuOptions {
   width: 100%;
