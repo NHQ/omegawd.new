@@ -7,8 +7,7 @@ head
   meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
   link(rel="stylesheet", href="/css/omg.css", type="text/css")
   link(rel="stylesheet", href="/css/writer.css", type="text/css")
-  title
-    OMEGA APP
+  title OMEGA APP
   style(type='text/css')
 
 body(id='master')
@@ -18,22 +17,31 @@ body(id='master')
         h1(class='omega_'+l, id='logo') Ω
         h1(class='dot'+l, id='logo') .
   #options
-    div(id='menuOptions')
-      a(href='#', id='writer', class='menuButton') Publish
-      a(href='#', id='writer', class='menuButton') Aggregate
-      a(href='#', id='writer', class='menuButton') Write
-      a(href='#', id='writer', class='menuButton') Visualize
-      a(href='#', id='writer', class='menuButton') Media & Files
-      a(href='#', id='writer', class='menuButton') Profile
-      a(href='#', id='writer', class='menuButton') Configure
+    div.icon.publish
+      object(style='zoom:5', id='icon_publish', data='/images/noun_project_1316.svg', type='image/svg+xml')
+      div.gloss
+    div.icon.satellite
+      object(style='zoom:5', id='icon_publish', data='/images/noun_project_1316.svg', type='image/svg+xml')
+      div.gloss
+    div.icon.satellite
+      object(style='zoom:5', id='icon_publish', data='/images/noun_project_1316.svg', type='image/svg+xml')
+      div.gloss
+    div.icon.satellite
+      object(style='zoom:5', id='icon_publish', data='/images/noun_project_1316.svg', type='image/svg+xml')
+      div.gloss
       
   script(type='text/javascript')
     var winX = window.innerWidth
     ,   winY = window.innerHeight
-    ,   box = document.getElementById('box');
-    box.style.top = winY / 6.67 + 'px';
-    box.style.left = .24 * winX + 'px';
-    box.style.display = 'inline'
+    ,   menuButtons = document.getElementsByClassName('menuButton')
+    ,		box = document.getElementById('box')
+    ,   mH = (winY - 20) - menuButtons.item(0).style.height * 8;
+    //box.style.display = 'block';
+    function domRay(x){
+      console.log(mH)
+      menuButtons.item(x).style.height = (winY) / 8 + 1 + 'px'
+      menuButtons.item(x).children[0].style['line-height'] = (winY) / 8 + 'px'
+    };for(x = 0;x < menuButtons.length; ++x) domRay(x)
   script(id='source', src="http://localhost:3333/client.deps.js", type="text/javascript", charset="utf-8")
   script(id='source', src="http://localhost:3333/browserify.js", type="text/javascript", charset="utf-8")
   script(type='text/javascript')
