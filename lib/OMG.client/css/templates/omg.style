@@ -45,41 +45,7 @@ body
   top: 0
   right: 0
   z-index: 1
-  border-left: 11px solid hsla(72, 0, 36.6, .6)
-  box-shadow: inset 3px 0 3px #333, -3px 0 3px #333
-
-#menuOptions
-  width: 100%
-  position:absolute
-  font-size: 17px
-  font-family:helvetica;
-
-.menuButton
-  padding:0
-  display: block
-  color: hsla(210, 20, 20, 1)
-  text-shadow: 1px 0px 1px #fff
-  text-decoration:none
-  z-index: 1
-  background-image:-webkit-linear-gradient(top,  hsla(72, 33, 96.6, 1), hsla(311, 50, 36.6, 1))
-
-.highlight 
-  background-image:-webkit-linear-gradient(top, hsla(111, 50, 96.6, 1), hsla(111, 50, 36.6, 1))
-
-.red
-  background-image:-webkit-linear-gradient(top, hsla(72, 50, 96.6, 1), hsla(311, 50, 36.6, 1))
-
-.menuButton h1 
-  text-align:center
-  margin: 0
-  padding: 0
-  height: 100%
-  -webkit-transform: skewX(-7deg)
-	
-.menuButton:hover
-  cursor: pointer
-  color: hsla(280, 50, 30, 1)
-  box-shadow: inset 0 3px 7px black
+  box-shadow:-3px 0 3px #333
 
 .icon
   width: 176px;
@@ -89,6 +55,7 @@ body
   margin: 31px 50px;
   display:block
   -webkit-box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.5);
+  z-index: 2
 
 .icon:hover
   cursor: pointer
@@ -107,14 +74,14 @@ body
   cursor: pointer
 
 
-#icon_publish
+#icon
   margin: .5px 0 0 .5px
   padding: 0
   border: 7.5px solid transparent
   color: green
   float:left
 
-#icon_publish:hover
+#icon:hover
   cursor:pointer
 
 .publish
@@ -123,31 +90,36 @@ body
 .publish:hover
   background: -webkit-radial-gradient(50% 50%, hsla(72, 73, 96.6, .75) 11%, hsla(72, 50, 56.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(255,0,0,1)), to(rgba(210, 20, 25, 1)))  
   cursor: pointer
-  
-.satellite
+
+.channel
   background: -webkit-radial-gradient(50% 50%, hsla(72, 33, 96.6, .75) 11%, hsla(72, 0, 36.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(255,0,0,1)), to(rgba(210, 20, 25, 1)))
 
-#glyph
-  display:none
-  position:absolute
-  top: 60px
-  left: 200px
-  width: 90px
-  height: 90px
-  -webkit-border-radius: 10px
-  color:  #333
-  font-size:17px
-  background-image:-webkit-gradient(radial, 50% 10%, 20, 50% 5%, -11, from(hsla(146, 100, 100, .6		)), to(hsla(146, 90, 90, .6	))), -webkit-gradient(linear, center bottom , center top , from(green), to(yellow))
-  box-shadow: -1px 1px 3px hsla(110, 0, 26.6, 1)
-  border: 3px solid #444
-  text-shadow: 1px -1px 1px #333
-  text-align:center
+.channel:hover
+  background: -webkit-radial-gradient(50% 50%, hsla(72, 73, 96.6, .75) 11%, hsla(72, 50, 56.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(255,0,0,1)), to(rgba(210, 20, 25, 1)))  
+  cursor: pointer  
 
-#glyph:hover
+.draftsman
+  background: -webkit-radial-gradient(50% 50%, hsla(72, 33, 96.6, .75) 11%, hsla(72, 0, 36.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(255,0,0,1)), to(rgba(210, 20, 25, 1)))
+
+.draftsman:hover
+  background: -webkit-radial-gradient(50% 50%, hsla(72, 73, 96.6, .75) 11%, hsla(72, 50, 56.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(255,0,0,1)), to(rgba(210, 20, 25, 1)))  
   cursor: pointer
-  background-image: -webkit-gradient(radial, 50% 5%, 0, 50% 35%, 80, from(hsla(146, 90, 42, 1)), to(hsla(146, 90, 42, .2))), -webkit-gradient(linear, center bottom , center top , from(yellow), to(green))
-  top:62px
-  left:202px
+    
+.fudge
+  margin-left: -10px    
+
+.profile
+  background: -webkit-radial-gradient(50% 50%, hsla(72, 33, 96.6, .75) 11%, hsla(72, 0, 36.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(255,0,0,1)), to(rgba(210, 20, 25, 1)))
+
+.profile:hover
+  background: -webkit-radial-gradient(50% 50%, hsla(72, 73, 96.6, .75) 11%, hsla(72, 50, 56.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(255,0,0,1)), to(rgba(210, 20, 25, 1)))  
+  cursor: pointer
+
+[data-auth=false]
+  background: -webkit-radial-gradient(50% 50%, hsla(72, 33, 96.6, .75) 11%, hsla(72, 0, 36.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(0, 255, 0, 1)), to(rgba(25, 210, 20, 1)))
+
+[data-auth=false]:hover
+  background: -webkit-radial-gradient(50% 50%, hsla(72, 73, 96.6, .75) 11%, hsla(72, 50, 56.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(0, 255, 0, 1)), to(rgba(25, 210, 20, 1)))
 
 
 #showOptions
@@ -158,44 +130,5 @@ body
   color:#533
 
 ::selection {
-  background-color:transparent;
+  background-color:pink;
 }
-
-#showOptions:hover
-  cursor:pointer
-  -webkit-transform: scale(2)
-
-#box
-  width: 350px
-  height: 33px
-  position:absolute;
-  -webkit-perspective: 1200px
-  -webkit-transform: matrix(1, 0, 0, 1, 0, 0)
-  -moz-perspective: 1200px
-  -moz-transform: matrix(1, 0, 0, 1, 0, 0)
-  -o-perspective: 1200px
-  display: none;
-  
-#logo 
-  width: 300px
-  font-family:Times;
-  font-size:100px;
-  position:absolute;
-  -webkit-transform-style: preserve-3d
-  -webkit-transform: rotateY(-45deg)
-  -o-transform-style: preserve-3d
-  -o-transform: rotateY(-45deg)
-  line-height: 0
-
-for n in logo
-  .omega_{n}
-    left: n px
-    z-index: 0 - n
-    color: hsla(145, 0 + n / 2, 86 + n / 3, .5 + n * (.07))
-
-  .dot{n}
-    left: 73 + n px 
-    top: -137 px
-    z-index: 0 - n
-    color: hsla(145, 0 + n / 2, 86 + n / 3, .5 + n * (.07))
-    -moz-transform: translate(20px, -13px)

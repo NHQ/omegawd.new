@@ -12,36 +12,27 @@ head
 
 body(id='master')
   #terminal
-    #box(style='display:none')
-      for l in list
-        h1(class='omega_'+l, id='logo') Ω
-        h1(class='dot'+l, id='logo') .
   #options
     div.icon.publish
-      object(style='zoom:5', id='icon_publish', data='/images/noun_project_1316.svg', type='image/svg+xml')
-      div.gloss
-    div.icon.publish
-      object(style='zoom:5', id='icon_publish', data='/images/noun_project_1316.svg', type='image/svg+xml')
-      div.gloss
-    div.icon.publish
-      object(style='zoom:5', id='icon_publish', data='/images/noun_project_1316.svg', type='image/svg+xml')
-      div.gloss
-    div.icon.publish
-      object(style='zoom:5', id='icon_publish', data='/images/noun_project_1316.svg', type='image/svg+xml')
-      div.gloss
+      div.hovr
+        object(style='zoom:5', id='icon', data='/images/noun_project_1316.svg', type='image/svg+xml')
+        div.gloss
+    div.icon.channel
+      div.hovr
+        object(style='zoom:5', id='icon', data='/images/globe.svg', type='image/svg+xml')
+        div.gloss
+    div.icon.draftsman
+      div.hovr
+        object(style='zoom:5', id='icon', data='/images/pencil.svg', type='image/svg+xml')
+        div.gloss
+    div.icon.profile(data-auth=auth)
+      div.hovr
+        object(style='zoom:5', id='icon', class='fudge', data-fudge='10', data='/images/profile.svg', type='image/svg+xml')
+        div.gloss
       
   script(type='text/javascript')
     var winX = window.innerWidth
-    ,   winY = window.innerHeight
-    ,   menuButtons = document.getElementsByClassName('menuButton')
-    ,		box = document.getElementById('box')
-    ,   mH = (winY - 20) - menuButtons.item(0).style.height * 8;
-    //box.style.display = 'block';
-    function domRay(x){
-      console.log(mH)
-      menuButtons.item(x).style.height = (winY) / 8 + 1 + 'px'
-      menuButtons.item(x).children[0].style['line-height'] = (winY) / 8 + 'px'
-    };for(x = 0;x < menuButtons.length; ++x) domRay(x)
+    ,   winY = window.innerHeight;
   script(id='source', src="http://localhost:3333/client.deps.js", type="text/javascript", charset="utf-8")
   script(id='source', src="http://localhost:3333/browserify.js", type="text/javascript", charset="utf-8")
   script(type='text/javascript')
