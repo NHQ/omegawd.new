@@ -76,7 +76,7 @@ body
 
 
 #icon
-  margin: .5px 0 0 .5px
+  margin: 31px 0 0 31px
   padding: 0
   border: 7.5px solid transparent
   color: green

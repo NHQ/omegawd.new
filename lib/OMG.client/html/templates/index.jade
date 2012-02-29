@@ -1,34 +1,16 @@
 doctype html
 html(lang='en', xmlns="http://www.w3.org/1999/xhtml", lang="en-US)
-meta(name="google", value="notranslate")
 
 head
+  meta(name="google", value="notranslate")
   meta(charset="UTF-8")
   meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
   link(rel="stylesheet", href="/css/omg.css", type="text/css")
-  link(rel="stylesheet", href="/css/writer.css", type="text/css")
   title OMEGA APP
   style(type='text/css')
 
-body(id='master')
-  #terminal
-  #options
-    div.icon.publish
-      div.hovr
-        object(style='zoom:5', id='icon', data='/images/noun_project_1316.svg', type='image/svg+xml')
-        div.gloss
-    div.icon.channel
-      div.hovr
-        object(style='zoom:5', id='icon', data='/images/globe.svg', type='image/svg+xml')
-        div.gloss
-    div.icon.draftsman
-      div.hovr
-        object(style='zoom:5', id='icon', data='/images/pencil.svg', type='image/svg+xml')
-        div.gloss
-    div.icon.profile(data-auth=auth)
-      div.hovr
-        object(style='zoom:5', id='icon', class='fudge', data-fudge='10', data='/images/profile.svg', type='image/svg+xml')
-        div.gloss
+body
+  != partial('frontis', {auth: 'false', getSVG: getSVG})
       
   script(type='text/javascript')
     var winX = window.innerWidth
