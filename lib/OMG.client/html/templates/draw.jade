@@ -1,0 +1,30 @@
+canvas(id="canvas", resize, style="background:white")
+div(id="options")
+  a(href="javascript:gg.draw.init.apply(gg);") draw
+    ul
+      li
+        a(href="#") Pen
+  a(href="#") shapes
+    ul
+      li
+        a(href="javascript:gg.shapes.line.apply(gg)") line
+      li
+        a(href="javascript:gg.shapes.arc.apply(gg)") Arc
+      li
+        a(href="javascript:gg.shapes.polygon.apply(gg)") polygons
+      li
+        a(href="javascript:gg.shapes.circle.apply(gg)") circles
+      li
+        a(href="javascript:gg.shapes.star.apply(gg)") star-burst
+      li
+        a(href="javascript:gg.shapes.burst.apply(gg)") burbles
+
+  a(href="javascript:gg.txt.init.apply(gg)") txt
+  br
+  a(href="javascript:gg.colorPicker.init.apply(gg);") pallette
+  br
+  a(href="#") select
+  br
+  a(href="#") undo
+  br
+  a(href="#") redo

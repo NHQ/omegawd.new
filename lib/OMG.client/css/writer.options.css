@@ -1,8 +1,6 @@
 #options {
-  position: fixed;
-  top: 70px;
-  right: 30px;
-  text-align: left;
+  background: transparent;
+  border: none;
 }
 #showOptions {
   position: fixed;

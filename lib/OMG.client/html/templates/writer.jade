@@ -5,7 +5,12 @@ div#console
   pre#editor
 
 div#options
+  div(class='icon publish')
+    div.hovr
+      div(style='zoom:1', id='icon')
+        != getSVG('noun_project_1316')
   a(class= 'options', data-event= 'click', id= 'returnHome', href= '#') HOME
+  br
   a(class= 'options', data-event= 'click', id= 'newWriter', href= '#') NEW
   br
   a(class= 'options', data-event= 'click', id= 'saveWriter', href= '#') SAVE
