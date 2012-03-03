@@ -1,3 +1,32 @@
+body {
+  width: 100%;
+}
+body {
+  height: 100%;
+}
+body {
+  margin: 0px;
+}
+body {
+  padding: 0px;
+}
+body {
+  overflow: hidden;
+}
+
+#terminal {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 5px solid #333;
+  box-shadow: inset 0 0 8px #000;
+  background-image: -webkit-radial-gradient(50% 50%, rgba(248,249,243,0.75), rgba(93,93,93,0.60));
+  -webkit-border-radius: 30px;
+}
 #editor { 
     margin: 0;
     position: absolute;
@@ -21,14 +50,28 @@
     overflow-x: hidden;
     overflow-y: scroll;
 }
-
+.ace_layer, ace_text_layer {
+	margin: 0;
+	padding: 0;
+}
 .ace_content {
+	margin: 0;
+	padding:
     position: absolute;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     cursor: text;
+		height: 20px;
 }
 .ace_sb {
   visibility:hidden;
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ace_print_margin, .ace_print_margin_layer {
+	display: none;
 }
