@@ -1,3 +1,7 @@
+@font-face
+  font-family omglyphs
+  src url(fonts/omglyphs/glyphs-omglyphs.ttf)
+  
 #options
   height: 100%
   position: absolute
@@ -35,11 +39,12 @@
 
 
 #icon
-  margin: 31px 0 0 31px
-  padding: 0
-  border: 7.5px solid transparent
-  color: green
-  float:left
+  color: black;
+  font: 97px omglyphs;
+  border: 3px solid blue;
+  height: 176px;
+  width: 176px;
+  padding: 27px;
 
 #icon:hover
   cursor:pointer
@@ -64,7 +69,12 @@
 .draftsman:hover
   background: -webkit-radial-gradient(50% 50%, hsla(72, 73, 96.6, .75) 11%, hsla(72, 50, 56.6, .6)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(rgba(255,0,0,1)), to(rgba(210, 20, 25, 1)))  
   cursor: pointer
-    
+
+.writerOptions
+  background: rgba(248,249,243,0.75)
+  cursor: pointer
+  -webkit-transform: scale(.75)
+
 .fudge
   margin-left: -10px    
 
