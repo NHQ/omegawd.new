@@ -1,3 +1,7 @@
+@font-face {
+  font-family: omglyphs;
+  src: url("fonts/omglyphs/glyphs-omglyphs.ttf");
+}
 #options {
   height: 100%;
   position: absolute;
@@ -34,11 +38,12 @@
   cursor: pointer;
 }
 #icon {
-  margin: 31px 0 0 31px;
-  padding: 0;
-  border: 7.5px solid transparent;
-  color: #008000;
-  float: left;
+  color: #000;
+  font: 97px omglyphs;
+  border: 3px solid #00f;
+  height: 176px;
+  width: 176px;
+  padding: 27px;
 }
 #icon:hover {
   cursor: pointer;
@@ -63,6 +68,11 @@
 .draftsman:hover {
   background: -webkit-radial-gradient(50% 50%, rgba(250,253,240,0.75) 11%, rgba(178,200,89,0.60)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(#f00), to(#d21419));
   cursor: pointer;
+}
+.writerOptions {
+  background: rgba(248,249,243,0.75);
+  cursor: pointer;
+  -webkit-transform: scale(0.75);
 }
 .fudge {
   margin-left: -10px;

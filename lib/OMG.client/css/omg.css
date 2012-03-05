@@ -1,3 +1,7 @@
+@font-face {
+  font-family: omglyphs;
+  src: url("fonts/omglyphs/glyphs-omglyphs.ttf");
+}
 body {
   width: 100%;
 }
