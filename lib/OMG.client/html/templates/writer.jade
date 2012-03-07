@@ -1,16 +1,14 @@
-div(id='showOptions') 
-
-div#console
+div#terminal
   pre#editor
 
 div#options
-  div(class='icon writerOtions')
-    div(style='zoom:1', id='icon')
-      != getSVG('pencil')
-  div(class='icon writerOtions')
-    div(style='zoom:1', id='icon') l
+  div(style='zoom:1', class='large glyph')
+    != getSVG('pencil', 50, 50)
+  div(style='zoom:1', class='large glyph writerOptionsIcon') l
   br
-  a(class= 'options', data-event= 'click', id= 'newWriter', href= '#') NEW
+  div(class='writerOptionsButton')
+    div(style='zoom:1', class='small glyph writerOptionsIcon') d 
+    h1(class='writeOptionsLabel', data-event= 'click', id='newWriter') NEW
   br
   a(class= 'options', data-event= 'click', id= 'saveWriter', href= '#') SAVE
   br

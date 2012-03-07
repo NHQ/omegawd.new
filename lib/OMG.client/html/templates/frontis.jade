@@ -2,21 +2,21 @@
 #options
   div.icon.publish
     div.hovr
-      div(style='zoom:1', id='icon')
+      div(style='zoom:1', class='frontisIcon')
         != getSVG('noun_project_1316')
       div.gloss
   div.icon.channel
     div(class='hovr', onclick='omg.draw()')
-      div(style='zoom:1', id='icon')
+      div(style='zoom:1', class='frontisIcon')
         != getSVG('globe')
       div.gloss
   div.icon.draftsman
     div(class='hovr', onclick='omg.writer.create()')
-      div(style='zoom:1', id='icon')
+      div(style='zoom:1', class='frontisIcon')
         != getSVG('pencil')
       div.gloss
   div(class='icon profile', data-auth=auth)
     div(class='hovr', onclick='omg.frontis()')
-      div(style='zoom:1', id='icon')
+      div(style='zoom:1', class='frontisIcon')
         != getSVG('profile')
       div.gloss
