@@ -31,6 +31,7 @@
 	}
 	#article {
     border: 3px solid red;
+    background:yellow;
 	}
 	#target {
 	  position:fixed;
@@ -44,7 +45,7 @@
   
   <div id='content'>
     <p id='article'>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts — <a href="#">it is</a> an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. <img src="" height="100px" width="100px"></img>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, b, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts — it is an almost unorthographic life. </p>
-    <iframe width="50%" class="audio" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F37058250&amp;auto_play=false&amp;show_artwork=false&amp;color=ff7700"></iframe>
+    <iframe width="50%" class="audio" height="166" scrolling="no" frameborder="no" src="/"></iframe>
     <blockquote>Pointing has no control about the blind texts — it is an almost unorthographic life</blockquote>
     <p id=''>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts — it is an almost unorthographic life. One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, b, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts — it is an almost unorthographic life. </p>
 <div class="image">
@@ -68,7 +69,7 @@ c4.278-4.156,6.477-9.779,6.354-15.769c0.123-5.87-2.075-11.614-6.354-15.895l3.664
 c-0.123,6.723-2.444,13.691-8.192,19.192L67.879,27.691z"/>
 </svg>
 </div>
-	    <iframe class="youtube video" width="560" height="315" src="http://www.youtube.com/embed/i3Jv9fNPjgk" frameborder="0" allowfullscreen></iframe>
+	    <iframe class="youtube video" width="560" height="315" src="/hello" frameborder="0" allowfullscreen></iframe>
 </div>
 
 	<div id='boundlessNutshell'>
@@ -77,18 +78,10 @@ c-0.123,6.723-2.444,13.691-8.192,19.192L67.879,27.691z"/>
 </body>
 
 <script type='text/javascript'>
-window.onload = function(){	
-  var handler = new Tautologistics.NodeHtmlParser.DefaultHandler(function (error, dom) {
-      if (error)
-          console.log(error)
-      else
-          console.log(dom)
-  });
-  var parser = new Tautologistics.NodeHtmlParser.Parser(handler);
-//  parser.parseComplete(document.body.innerHTML);
+window.onload = function(){
   
-  
-  
+    var Document = Object.create(null);
+      
 		var winY = window.innerHeight
 		,		winX = window.innerWidth
 		,		test = document.getElementById('text')
@@ -96,6 +89,7 @@ window.onload = function(){
 		,		body = document.body
 		, 	fontSize = 20
 		,		charsPerLine = 72
+		,   lineHeight = Math.ceil(fontSize * 1.62)
 		,   targetDimension = {
 		      'height' : Math.min(winY * .9 , 720),
     		  'width' : Math.min(winX / 1.62, 960),
@@ -104,6 +98,17 @@ window.onload = function(){
     		}
 		;
 		
+		platform.winX = winX
+		platform.winY = winY
+		
+		var data = {
+		  userAgent : window.navigator.userAgent,
+		  winX : winX,
+		  winY : winY		  
+		};
+		
+		$.post('/' + encodeURIComponent(JSON.stringify(data)), platform, function(e,r){console.log(e,r)})
+    
 		
 		
 		$('#target').css(targetDimension)
@@ -168,8 +173,11 @@ window.onload = function(){
 		,		charsPerPage = linesPerPage * (lineWidth / pixelsPerChar)
 		;
 
-		article.style.width = Math.floor(lineWidth) + 'px';
-		article.style['line-height'] = Math.floor(fontSize * 1.62) + 'px';
+    console.log('XXXXXXX', currWidth)
+
+
+		article.style.width = lineWidth + 'px'; // Math.floor(lineWidth) + 'px';
+		article.style['line-height'] = lineHeight + 'px';
 
     console.log(currWidth, pixelsPerChar, test.textContent.length, test.textContent )
 
@@ -245,8 +253,24 @@ window.onload = function(){
 			wordFn(words)			
 		
 		};
+  	console.log(content)
+  	
+  	function doContent(content) {
+  	  var content = content
+  	  ,   children = content.children
+  	  ;
+  	  
+  	  children.forEach(function(elem){
+  	    switch(elem){
+  	    }
+  	  })
+  	  
+  	}
 		
 	doLines(article.innerHTML)
+	
+	
+	
 }
 	
 </script>
