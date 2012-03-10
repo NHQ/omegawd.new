@@ -15,12 +15,6 @@ body {
   padding: 0px;
 }
 body {
-  background-image: -moz-radial-gradient(51% 43%, #f7f8f5 11%, #5d5d5d);
-}
-body {
-  background-image: -o-radial-gradient(51% 43%, #f7f8f5 11%, #5d5d5d);
-}
-body {
   background: #333;
 }
 body {
@@ -32,17 +26,20 @@ body {
   box-sizing: border-box;
 }
 #terminal {
-  width: 100%;
+  width: 78.5%;
   height: 100%;
   padding: 0;
   margin: 0;
   position: absolute;
   top: 0;
-  left: 0;
+}
+#terminal left: 0 {
   border: 5px solid #333;
   box-shadow: inset 0 0 8px #000;
+  background: #fff;
   background-image: -webkit-radial-gradient(50% 50%, rgba(248,249,243,0.75), rgba(93,93,93,0.60));
   -webkit-border-radius: 30px;
+  overflow: hidden;
 }
 #options {
   height: 100%;
@@ -50,8 +47,11 @@ body {
   top: 0;
   right: 0;
   z-index: 1;
-  box-shadow: -3px 0 3px #333;
-  background: #5d5d5d;
+  border: 5px solid #333;
+  box-shadow: -3px 0 3px #333, inset 0 0 8px #000;
+  background-image: -webkit-linear-gradient(left, rgba(93,93,93,0.60), rgba(223,225,216,0.60), rgba(93,93,93,0.60));
+  -webkit-border-radius: 30px;
+  overflow: hidden;
 }
 .icon {
   width: 176px;
@@ -67,7 +67,7 @@ body {
   cursor: pointer;
 }
 .gloss {
-  height: 176px;
+  height: 100%;
   -webkit-border-top-right-radius: 88px;
   -webkit-border-top-left-radius: 30px;
   -webkit-border-bottom-right-radius: 120px 20px;
@@ -79,14 +79,14 @@ body {
 .gloss:hover {
   cursor: pointer;
 }
-#icon {
+.frontisIcon {
   margin: 31px 0 0 31px;
   padding: 0;
   border: 7.5px solid transparent;
   color: #008000;
   float: left;
 }
-#icon:hover {
+.frontisIcon:hover {
   cursor: pointer;
 }
 .publish {
@@ -132,7 +132,4 @@ body {
   right: 70px;
   font-size: 50px;
   color: #533;
-}
-::selection {
-  background-color: #ffc0cb;
 }

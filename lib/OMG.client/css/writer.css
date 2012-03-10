@@ -17,6 +17,7 @@ body {
 }
 body {
   overflow: hidden;
+	background: #333;
 }
 
 #terminal {
@@ -29,6 +30,7 @@ body {
   left: 0;
   border: 5px solid #333;
   box-shadow: inset 0 0 8px #000;
+	background: #fff;
   background-image: -webkit-radial-gradient(50% 50%, rgba(248,249,243,0.75), rgba(93,93,93,0.60));
   -webkit-border-radius: 30px;
 }
@@ -79,4 +81,8 @@ body {
 }
 .ace_print_margin, .ace_print_margin_layer {
 	display: none;
+}
+.ace-tm, .ace_gutter {
+	background: transparent;
+	color:#ddd;
 }

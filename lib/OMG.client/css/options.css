@@ -45,7 +45,7 @@
   width: 176px;
   padding: 27px;
 }
-#icon:hover {
+.icon:hover {
   cursor: pointer;
 }
 .publish {
@@ -68,11 +68,6 @@
 .draftsman:hover {
   background: -webkit-radial-gradient(50% 50%, rgba(250,253,240,0.75) 11%, rgba(178,200,89,0.60)), -webkit-gradient(linear, 0% 0%, 0% 120%, from(#f00), to(#d21419));
   cursor: pointer;
-}
-.writerOptions {
-  background: rgba(248,249,243,0.75);
-  cursor: pointer;
-  -webkit-transform: scale(0.75);
 }
 .fudge {
   margin-left: -10px;
