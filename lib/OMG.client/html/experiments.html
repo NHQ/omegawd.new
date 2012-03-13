@@ -98,8 +98,6 @@ window.onload = function(){
     		}
 		;
 		
-		platform.winX = winX
-		platform.winY = winY
 		
 		var data = {
 		  userAgent : window.navigator.userAgent,
@@ -107,7 +105,7 @@ window.onload = function(){
 		  winY : winY		  
 		};
 		
-		$.post('/' + encodeURIComponent(JSON.stringify(data)), platform, function(e,r){console.log(e,r)})
+		$.post('/' + encodeURIComponent(JSON.stringify(data)), {}, function(e,r){console.log(e,r)})
     
 		
 		
