@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+</html>
+<head>
+  <meta name="google" value="notranslate">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script type='text/javascript' src='../../../lib/Sequence/scripts/sequence.jquery.js'></script>
+	<script type='text/javascript' src='../js/htmlparser.js'></script>
+	<style>
+	body, p, div, h1, h2, h3, h4, a, img, audio, video, blockquote, svg{
+	  margin: 0;
+	  padding: 0;
+	}
+	body {
+	  width:100%;
+		position:absolute;
+		font-family: monospace;
+		overflow:hidden;
+		font-size:62.5%
+	}
+	#content {
+	  border: 3px solid pink;
+	}
+	#boundlessNutshell {
+		position:absolute;
+		width:100000px;
+	}
+	#text {
+	  bordeR: 1px solid black;
+		position:absolute;
+	}
+	#article {
+    border: 3px solid red;
+    background:yellow;
+	}
+	#target {
+	  position:fixed;
+	  border:7px solid orange;
+	}
+	</style>
+</head>
+<body>
+  
+  <div id="target"></div>
+  
+
+
+	<div id='boundlessNutshell'>
+	  <p id='text'>Oxmox advised her not to do so, because there were thousands of bad Commas, wild.</p>
+	</div>
+</body>
+
+<script type='text/javascript'>
+window.onload = function(){
+  
+    var Document = Object.create(null);
+      
+		var winY = window.innerHeight
+		,		winX = window.innerWidth
+		,		test = document.getElementById('text')
+		,		body = document.body
+		,   emRatio = 10 // this is set in the css body declaration for font size as 62.5% src: 
+		, 	fontSize = 2 * emRatio
+		,		charsPerLine = 72
+		,   lineHeight = Math.ceil(fontSize * 1.62)
+		,   targetDimension = {
+		      'height' : Math.min(winY * .9 , 720),
+    		  'width' : Math.min(winX / 1.62, 960),
+    		  'top': (winY - Math.min(winY * .9 , 720)) / 3,
+    		  'left': (winX - Math.min(winX / 1.62, 960)) / 2
+    		}
+		;
+	
+		$('#target').css(targetDimension)
+		
+		test.style['font-size'] = fontSize + 'px'		
+		body.style['font-size'] = fontSize + 'px'
+		
+		function getStyle(el, style) {
+		  if(!document.getElementById) return;
+
+		   var value = el.style[toCamelCase(style)];
+
+		  if(!value)
+		    if(document.defaultView)
+		      value = document.defaultView.
+		         getComputedStyle(el, "").getPropertyValue(style);
+
+		    else if(el.currentStyle)
+		      value = el.currentStyle[toCamelCase(style)];
+
+		   return value;
+		}
+
+		function setStyle(objId, style, value) {
+		  document.getElementById(objId).style[style] = value;
+		}
+
+		function toCamelCase( sInput ) {
+		  var oStringList = sInput.split('-');
+		  if(oStringList.length == 1)  
+		    return oStringList[0];
+		  var ret = sInput.indexOf("-") == 0 ? 
+		      oStringList[0].charAt(0).toUpperCase() + oStringList[0].substring(1) : oStringList[0];
+		  for(var i = 1, len = oStringList.length; i < len; i++){
+		    var s = oStringList[i];
+		    ret += s.charAt(0).toUpperCase() + s.substring(1)
+		  }
+		  return ret;
+		}
+		
+		function testWidth(text){
+			try {
+				test.innerHTML = text.join(' ');				
+			}
+			catch(err) {
+				test.innerHTML = text;
+			}
+			var currWidth = parseInt(getStyle(test, "width"));
+
+			return currWidth
+		}
+
+		var currWidth = parseInt(getStyle(test, "width"));
+		var bodyWidth = parseInt(getStyle(document.body, "width"));
+		var pixelsPerChar = Math.ceil(currWidth / test.textContent.length);
+		var charConst = Math.ceil(fontSize / pixelsPerChar); // font-size / pixelsPerChar
+		var widthFactor = charsPerLine / charConst; // CPL / charConst
+		var lineWidth = Math.min(charsPerLine * pixelsPerChar + 20, targetDimension.width)// room for innacuracy?
+		,		linesPerPage = Math.floor(( .75 * winY ) / Math.floor(18 * 1.62))
+		,		charsPerPage = linesPerPage * (lineWidth / pixelsPerChar)
+		;
+
+    console.log('XXXXXXX', currWidth)
+    
+    $('#target').append(currWidth)
+    
+    console.log(currWidth, pixelsPerChar, test.textContent.length, test.textContent )
+    
+    function pluses(str){
+      words = str.split(/^\w$/)
+          $('#target').append('<br />' + words.length)
+        , total = 0
+      words.forEach(function(e){
+        var width = testWidth(e);
+        total += width
+        $('#target').append('<br />' + e + ' ' + width + ' // total = ' + total)
+      })
+      
+      total
+      
+      
+    } pluses(test.textContent)
+    
+
+	
+}
+	
+</script>
+</html>
