@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+</html>
+<head>
+  <title>Johnny Honestly</title>
+  <meta name="google" value="notranslate">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script type='text/javascript' src='http://localhost:3333/html/client.deps'></script>
+	<style>
+
+	body, div, h1, h2, h3, h4, a, img, audio, video, blockquote, svg{
+	  margin: 0;
+	  padding: 0;
+	}
+	body {
+		font-family: Times;
+		width: 100%;
+		height: 100%;
+		font-size:62.5%;
+		color: hsla(210, 80%, 30%, 1);
+		background-image: -webkit-radial-gradient(center, hsla(110,50%,50%,.65), hsla(110,80%,30%,1));
+    
+	}
+	a{
+	  text-decoration:none;
+	  color: hsla(210, 80%, 50%, 1);
+	}
+
+  #container {
+    width: 100%;
+    height: 100%;
+    -webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
+    -webkit-perspective-origin: 50% 50%;    
+    background-image: -webkit-radial-gradient(center, hsla(110,50%,50%,.65), hsla(110,80%,30%,1));
+  }
+  #stage {
+    -webkit-transition: -webkit-transform 2s;
+    -webkit-transform-style: preserve-3d;  
+  }
+  
+  #shape {
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    -webkit-transform-style: preserve-3d;    
+  }
+  
+  .plane {
+    position: relative;
+    display:inline-block;
+    height: 50px;
+    width: 50px;
+    border: 1px solid white;
+    -webkit-border-radius: 12px;
+    -webkit-box-sizing: border-box;
+    background-image: -webkit-radial-gradient(center, hsla(110,50%,50%,1), hsla(110,80%,30%,1));
+    -webkit-transition: -webkit-transform 2s, opacity 2s;
+    -webkit-backface-visibility: hidden;
+  }
+
+  #shape.backfaces .plane {
+    -webkit-backface-visibility: visible;
+  }
+  
+  #shape {
+    -webkit-animation: spins 8s infinite linear;
+  }
+  @-webkit-keyframes spin {
+       from { -webkit-transform: rotateY(0); }
+       to   { -webkit-transform: rotateY(-360deg); }
+     }
+  .ring > .one {
+        -webkit-transform: translateZ(200px) ;
+      }
+
+      .ring > .two {
+        -webkit-transform: rotateY(0deg) translateZ(200px);
+      }
+
+      .ring > .three {
+        -webkit-transform: rotateY(0deg) translateZ(200px);
+      }
+
+      .ring > .four {
+        -webkit-transform: rotateY(0deg) translateZ(200px);
+      }
+	</style>
+</head>
+<body>
+<div class='terminal'>
+  <div id="stage">
+        <div id="shape" class="ring backfaces">
+          <div class="plane ring  one"></div>
+          <div class="plane ring two"></div>
+          <div class="plane ring three"></div>
+          <div class="plane ring four"></div>
+        </div>
+      </div>
+  </div>
+</div>
+<script type='text/javascript'>
+  $('.navlink').css('font-size', window.innerWidth / 300 +'em')
+</script>
+</body>
+</html>
