@@ -1,0 +1,18 @@
+div(id='stage')
+
+div(class='toolSet', id='toolSet')
+  select(id='target', class='selector')
+    option(value='stage', selected='selected') stage
+    option(id='targeting', value='target') [target]
+  select(id='relationship', class='selector')
+    option(value='append') append
+    option(value='prepend') prepend
+    option(value='wrap') wrap
+  select(id='elem', class='selector')
+    for x in elemenos
+      option(class='elemHTML', value=x)
+        = x
+  button(type='button', class='selector', id='createHTMLelem') press
+  input(type="range", class='ranger', min="-100", max="200", value="40", onchange="", id="oy")
+  div(class='')
+    <canvas class='xyRangeCanvas' id='xyRangeCanvas' resize></canvas>

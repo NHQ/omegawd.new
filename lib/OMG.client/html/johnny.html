@@ -8,7 +8,7 @@
 	<link rel='stylesheet' href='../css/ui-lightness/jqueryui.ui.css'>
 
 	<style>
-	body, div, h1, h2, h3, h4, a, img, audio, video, blockquote, svg{
+	body, div, h1, h2, h3, h4, a, img, audio, video, blockquote, svg, canvas{
 	  margin: 0;
 	  padding: 0;
 	}
@@ -21,6 +21,7 @@
 		background-image: -webkit-radial-gradient(center, hsla(110,50%,50%,.65), hsla(110,80%,30%,1));
     
 	}
+	
 	a{
 	  text-decoration:none;
 	  color: hsla(210, 80%, 50%, 1);
@@ -33,8 +34,8 @@
     -webkit-perspective-origin: 50% 50%;    
     background-image: -webkit-radial-gradient(center, hsla(110,50%,50%,.65), hsla(110,80%,30%,1));
   }
+  
   #stage {
-    -webkit-transition: -webkit-transform 2s;
     -webkit-transform-style: preserve-3d;  
   }
   
@@ -55,7 +56,6 @@
     -webkit-border-radius: 12px;
     -webkit-box-sizing: border-box;
     background-image: -webkit-linear-gradient(right, hsla(110,50%,50%,1), hsla(110,80%,30%,1));
-    -webkit-transition: -webkit-transform 2s, opacity 2s;
     -webkit-backface-visibility: hidden;
   }
 
@@ -63,19 +63,16 @@
     -webkit-backface-visibility: visible;
   }
   
-  #shape {
-    -webkit-animation: spins 8s infinite linear;
-  }
-  @-webkit-keyframes spin {
-       from { -webkit-transform: rotateY(0); }
-       to   { -webkit-transform: rotateY(-360deg); }
+     .ring {
+       -webkit-transform-style: preserve-3d;    
+       
      }
   .ring > .one {
         -webkit-transform: skewY(-30deg) translateZ(200px) ;
       }
 
       .ring > .two {
-        -webkit-transform: skewY(-30deg) skewX(45deg) translateX(-30px) translateY(60px);
+        -webkit-transform: skewY(-30deg) rotateZ(100deg) translateX(-30px) translateY(60px);
       }
 
       .ring > .three {
@@ -85,36 +82,122 @@
       .ring > .four {
         -webkit-transform: skewY(-30deg) translateZ(400px) rotateY(90) ;
       }
+      .l20{
+        left: 200px;
+        -webkit-transform: skewY(180deg);
+      }
+      .l40{
+        top:500px;
+        left:460px;
+        -webkit-transform: skewY(180deg);
+      }
 			.slider {
 				position: absolute;
 				background: #333;
 				height: 400px;
 				right: 30px;
 			}
-			.boxx {
-				width: 400px;
-				height: 400px;
-				position: absolute;
-				background: pink;
-				top: 100px;
-				right:100px;
-			}
+
 			.skoo { -webkit-tranform: skewY(90deg)}
+			#flip-container {
+			  height:300px;
+			  width:300px;
+			}
+			#flip-container:hover #flipcard {
+        -webkit-transform: skewY(20deg) rotateY(180deg) skewY(20deg);
+      }
+      
+			#flipcard {
+      width: 100%;
+      height: 100%;
+      -webkit-transform-style: preserve-3d;
+      -webkit-transition: -webkit-transform .67s;
+      }
+      .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      }
+			.face.back{
+      display: block;
+      -webkit-transform: rotateY(180deg);
+      -webkit-box-sizing: border-box;
+      font-size: 12pt;
+       text-align: center;
+      -webkit-border-radius: 10px;
+      }
+      .face.back img, .face.front img {
+        width:100%;
+        height:100%
+      }
+      .xxx {
+        -webkit-transform: skewY(30deg) rotateZ(180deg);
+        -webkit-tranform-origin: 100% 100%;
+        
+      }
+      .ranger{
+        position:absolute;
+        right:30px;
+        top:30px;
+        height:100px;
+        width:30px;
+        -webkit-appearance: slider-vertical;
+        -moz-appearance: slider-vertical;
+        zoom: 2;
+      }
+      #xyRanger {
+        height:250px;
+        width:250px;
+        background:#333;
+        position: absolute;
+        right:260px;
+        top:30px;
+      }
+      .xyRangeFinder {
+        height:20px;
+        width:20px;
+        top:115px;
+        left:115px;
+        border-radius: 10px;
+        background: red;
+        z-index:3;
+      }
+      #xyRangeCanvas {
+        height:100%;
+        width:100%;
+        padding:0;
+        margin:0;
+        border:1px solid pink;
+        z-index:1;
+        
+      }
 	</style>
 </head>
 <body>
 <div class='terminal'>
-	<div class='boxx'></div>
+  <input type="range" class='ranger' min="-100" max="200" value="40" onchange="" id="oy" />
+  <div id='xyRanger'>
+    <canvas id='xyRangeCanvas'></canvas>
+    <div id='xyRangeFinder'></div>
+  </div>
+  <div id='flip-container'>
+  	<div id='flipcard'>
+  	 <div class='front face'><img src='../images/moon.jpg' /></div>
+  	 <div class='back face'><img src='../images/home.jpg' /></div>
+  	</div>
+	</div>
 	<div class='slider'></div>
-  <div id="stage">
-        <div id="shape" class="ring backfaces">
-          <div class="plane ring  one"></div>
-          <div class="plane ring two"></div>
-          <div class="plane ring three"></div>
-          <div class="plane ring four"></div>
-        </div>
-      </div>
+	<div class="plane l40 xxx"></div>
+  
+	<div id='stage'>
+    <div id='shape' class='ring'>
+      <div class="plane one l40"></div>
+    </div>
+  </div>
 </div>
 </body>
 <script type='text/javascript' src='http://localhost:3333/client.deps.js'></script>
+<script type='text/javascript' src='http://localhost:3333/js/jquery.ui.min.js'></script>
+<script type='text/javascript' src='http://localhost:3333/js/johnny.js'></script>
 </html>
