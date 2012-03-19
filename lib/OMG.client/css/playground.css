@@ -1,0 +1,72 @@
+body, div, h1, h2, h3, h4, a, img, audio, video, blockquote, svg, canvas{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	font-family: Times;
+	width: 100%;
+	height: 100%;
+	font-size:62.5%;
+	color: hsla(210, 80%, 30%, 1);
+	background-color: #fff;
+	background-image: -webkit-radial-gradient(center, hsla(110,50%,50%,.65), hsla(110,80%,30%,1));
+  
+}
+
+a{
+  text-decoration:none;
+  color: hsla(210, 80%, 50%, 1);
+}
+
+.stage{
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.toolSet {
+	position:absolute;
+  right:0px;
+  top:0px;
+	width: 400px;
+	height: 100%;
+	z-index: 1;
+  box-shadow: -3px 0 3px #333;
+  background: #5d5d5d;
+}
+.selector {
+	zoom:2.23;
+	display:block;
+}
+.ranger{
+	display:block;
+  height:100px;
+  -webkit-appearance: slider-vertical;
+  -moz-appearance: slider-vertical;
+  zoom: 2;
+}
+
+.pgSelected {
+	
+	border: 1px dashed hsla(205, .76, .85, 1);
+}
+
+.xyRangeCanvas {
+	display:block;
+	
+	width:100%;
+	height:100%;
+  background:#333;
+border:3px solid pink;
+}
+
+.media {
+	background: -webkit-linear-gradient(left, #333, #ddd);
+	position:absolute;
+	right:30px;
+	left: 360px;
+	width: 250px;
+	height: 250px;
+}

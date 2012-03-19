@@ -1,0 +1,45 @@
+
+<div id="stage">
+</div>
+<div id="toolSet" class="toolSet">
+  <select id="target" class="selector">
+    <option value="stage" selected="selected">stage
+    </option>
+    <option id="targeting" value="target">[target]
+    </option>
+  </select>
+  <select id="relationship" class="selector">
+    <option value="append">append
+    </option>
+    <option value="prepend">prepend
+    </option>
+    <option value="wrap">wrap
+    </option>
+  </select>
+  <select id="elem" class="selector">
+    <option value="div" class="elemHTML">div
+    </option>
+    <option value="a" class="elemHTML">a
+    </option>
+    <option value="p" class="elemHTML">p
+    </option>
+    <option value="img" class="elemHTML">img
+    </option>
+    <option value="audio" class="elemHTML">audio
+    </option>
+    <option value="video" class="elemHTML">video
+    </option>
+    <option value="canvas" class="elemHTML">canvas
+    </option>
+    <option value="header" class="elemHTML">header
+    </option>
+    <option value="iframe" class="elemHTML">iframe
+    </option>
+  </select>
+  <button type="button" id="createHTMLelem" class="selector">press
+  </button>
+  <input type="range" min="-100" max="200" value="40" onchange="" id="oy" class="ranger"/>
+  <div class=""><canvas class='xyRangeCanvas' id='xyRangeCanvas' resize></canvas>
+
+  </div>
+</div>

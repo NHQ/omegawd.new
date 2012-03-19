@@ -17,8 +17,8 @@ body
   script(id='source', src="http://localhost:3333/client.deps.js", type="text/javascript", charset="utf-8")
   script(id='source', src="http://localhost:3333/browserify.js", type="text/javascript", charset="utf-8")
   script(type='text/javascript')
-    window.onload = function() {
+    $(document).ready(function() {
       var OMG = require('./index.js')
       ,   omg = new OMG(window);
       omg.init();
-    }
+    })
