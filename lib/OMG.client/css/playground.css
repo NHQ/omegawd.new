@@ -1,4 +1,4 @@
-body, div, h1, h2, h3, h4, a, img, audio, video, blockquote, svg, canvas{
+body, div, h1, h2, h3, h4, a, img, audio, video, blockquote, svg, canvas, textarea{
   margin: 0;
   padding: 0;
 }
@@ -11,7 +11,17 @@ body {
 	color: hsla(210, 80%, 30%, 1);
 	background-color: #fff;
 	background-image: -webkit-radial-gradient(center, hsla(110,50%,50%,.65), hsla(110,80%,30%,1));
-  
+}
+
+.curtain {
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	left: 0;
+	top: 0;
+	background: #ddd;
+	z-index:3;
+	opacity:.33;
 }
 
 a{
@@ -28,45 +38,107 @@ a{
 
 .toolSet {
 	position:absolute;
-  right:0px;
+  right:10px;
   top:0px;
 	width: 400px;
 	height: 100%;
 	z-index: 1;
-  box-shadow: -3px 0 3px #333;
-  background: #5d5d5d;
+  background: transparent;
 }
+.cssPrimitivesWrapper {
+	height:30%;
+	width: 100%;
+	overflow:auto;
+	font-size:1.67em;
+	font-family: Courier;
+	border:2px solid yellow;
+}
+.cssPrimitives{
+	margin: 0 1ex;
+	border-bottom: 1px dotted #333;
+}
+
+span.cssType {
+	font-size:1;
+	text-transform:uppercase;
+	color: #788;
+}
+span.cssProperty {
+	color: #333;
+}
+span.cssComputed {
+	color: #000;
+}
+span.cssPrimitiveVal, span.cssPrimitiveUnit {
+	color: rgb(0,20,199);
+}
+
 .selector {
-	zoom:2.23;
+	-webkit-transform: scale(2);
+	-mox-transform: scale(2);
 	display:block;
+	margin:16px 0;
 }
+
+
+
 .ranger{
-	display:block;
   height:100px;
   -webkit-appearance: slider-vertical;
   -moz-appearance: slider-vertical;
   zoom: 2;
-}
-
-.pgSelected {
-	
-	border: 1px dashed hsla(205, .76, .85, 1);
+	position: absolute;
+	left:10px;
+	bottom: 10px;
 }
 
 .xyRangeCanvas {
-	display:block;
-	
-	width:100%;
-	height:100%;
+	position: absolute;
+	left: 230px;
+	bottom:10px;
   background:#333;
-border:3px solid pink;
+	border:3px solid pink;
+	cursor:crosshair;
 }
 
-.media {
-	background: -webkit-linear-gradient(left, #333, #ddd);
+#playgroundMediaUploader {
+	width:100%;
+	height:250px;
+	border: 3px solid brown;
+}
+.wrapper > img {
+	width:100%;
+	height:auto;
+}
+
+.wrapper {
 	position:absolute;
 	right:30px;
 	left: 360px;
-	width: 250px;
-	height: 250px;
+	width: 27%;
+	height: 22%;
+	padding:0px;
+}
+
+.wrapper:hover {
+	border: 1px dashed hsla(205, 90%, 90%, 1);
+}
+
+.media {
+	width:100%;
+}
+.media:not(button, input, textarea) {
+	height:100%;
+}
+
+textarea.media {
+	font-size:2em;
+	height:67%;
+}
+
+.hovered > * {
+	visibility:visible;
+}
+.selected {
+	border: 1px dashed hsla(205, 90%, 90%, 1);
 }
