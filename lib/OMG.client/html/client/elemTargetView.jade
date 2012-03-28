@@ -1,17 +1,20 @@
 div(class='cssPrimitivesWrapper')
-	h1= ' <' + selected.html.tagName + '>'
-	- for css in selected.css
-		div(id=css.property, data-type=css.primitive.value.type, class='cssPrimitives')
-			span.cssProperty 
-				=css.property + ':'
-			br
-			span.cssType
-				= '@' + css.primitive.value.type + ' '
-			- if (typeof css.primitive.value.val === 'object')
-				span.cssPrimitiveVal
-					= 'rgb(' + css.primitive.value.val.r + ', ' + css.primitive.value.val.g + ', ' + css.primitive.value.val.b + ')'
-			- else
-				span(class='cssPrimitiveVal', data-value=css.primitive.value.val)
-					= css.primitive.value.val
-			span.cssPrimitiveUnit
-				= css.primitive.value.unit
+  h1= ' <' + selected.html.tagName.toLowerCase() + '>'
+  - for css in selected.css
+    div(id=css.property, data-type=css.primitive.value.type, class='cssPrimitives')
+      span.cssProperty 
+        =css.property + ':'
+      br
+      span.cssType
+        = '@' + css.primitive.value.type + ' '
+      - if (typeof css.primitive.value.val === 'object')
+        span.cssPrimitiveVal
+          = 'rgb(' + css.primitive.value.val.r + ', ' + css.primitive.value.val.g + ', ' + css.primitive.value.val.b + ')'
+      - else if (css.primitive.value.type === 'string')
+        span(contenteditable='true', type='text', class='cssString cssPrimitiveVal', data-value=css.primitive.value.val)
+          =css.primitive.value.val
+      - else
+        span(class='cssPrimitiveVal', data-value=css.primitive.value.val)
+          = css.primitive.value.val
+      span.cssPrimitiveUnit
+        = css.primitive.value.unit
