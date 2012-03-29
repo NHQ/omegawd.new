@@ -11,10 +11,10 @@ div(class='cssPrimitivesWrapper')
         span.cssPrimitiveVal
           = 'rgb(' + css.primitive.value.val.r + ', ' + css.primitive.value.val.g + ', ' + css.primitive.value.val.b + ')'
       - else if (css.primitive.value.type === 'string')
-        span(contenteditable='true', type='text', class='cssString cssPrimitiveVal', data-value=css.primitive.value.val)
+        span(contenteditable='true', type='text', class='cssPrimitiveVal cssString', data-value=css.primitive.value.val)
           =css.primitive.value.val
       - else
-        span(class='cssPrimitiveVal', data-value=css.primitive.value.val)
+        span(class='cssPrimitiveVal ' + css.primitive.value.type, data-value=css.primitive.value.val, data-unit= css.primitive.value.unit)
           = css.primitive.value.val
       span.cssPrimitiveUnit
         = css.primitive.value.unit

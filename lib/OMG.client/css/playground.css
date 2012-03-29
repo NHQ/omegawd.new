@@ -72,6 +72,9 @@ span.cssComputed {
 span.cssPrimitiveVal, span.cssPrimitiveUnit {
 	color: rgb(0,20,199);
 }
+span.cssPrimitiveVal:hover {
+	cursor: move;
+}
 
 .selector {
 	-webkit-transform: scale(2);
