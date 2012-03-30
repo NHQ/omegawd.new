@@ -46,7 +46,7 @@ a{
   background: transparent;
 }
 .cssPrimitivesWrapper {
-	height:30%;
+	height:100%;
 	width: 100%;
 	overflow:auto;
 	font-size:1.67em;
