@@ -1,7 +1,7 @@
 div(class='cssPrimitivesWrapper')
   h1= ' <' + selected.html.tagName.toLowerCase() + '>'
   - for css in selected.css
-    div(id=css.property, data-type=css.primitive.value.type, class='cssPrimitives')
+    div(id=css.property, data-type=css.primitive.value.type, class='cssPrimitives ' + css.primitive.type)
       span.cssProperty 
         =css.property + ':'
       br
