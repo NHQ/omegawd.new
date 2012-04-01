@@ -1,4 +1,4 @@
-body, div, h1, h2, h3, h4, a, img, audio, video, blockquote, svg, canvas, textarea{
+body, div, h1, h2, h3, h4, a, img, ul, audio, video, blockquote, svg, canvas, textarea{
   margin: 0;
   padding: 0;
 	margin-before: 0;
@@ -150,7 +150,8 @@ span.cssPrimitiveVal:hover {
 	background-position: 0px -160px; 
 }
 .rotateHandle {
-	background-position: 0px -160px; 
+	cursor: pointer;
+	background-position: -352px -128px; 
 }
 .handlePosTopRight {
 	top:0px;
