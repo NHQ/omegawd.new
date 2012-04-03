@@ -1,13 +1,20 @@
 div(id='stage')
 div(class='toolSet', id='toolSet')
-  select(id='target', class='selector')
-    option(value='stage', selected='selected') stage
-    option(id='targeting', value='target') [target]
-  select(id='relationship', class='selector')
-    option(value='append') append
-    option(value='prepend') prepend
-    option(value='wrap') wrap
-  for x in elemenos
-    button(type='button', class='selector createHTMLelem', data-event='click', data-type=x)
-      = x
-  input(type='file', id='mediaElemSrc', class='selector')
+  ul(class='menuList', id='metaMenu') 
+    h1 META
+    br
+    for x in layouts
+      li(class='layoutSelector')
+        h1(class='setLayout', data-event='click', data-type=x)= x
+  ul(class='menuList', id='layoutMenu') 
+    h1 LAYOUT
+    br
+    for x in layouts
+      li(class='layoutSelector')
+        h1(class='setLayout', data-event='click', data-type=x)= x
+  ul(class='menuList', id='templatesMenu') 
+    h1 TEMPLATES
+    br
+    for x in elemenos
+      li(class='templateSelector')
+        h1(class='createHTMLelem', data-event='click', data-type=x)= x
