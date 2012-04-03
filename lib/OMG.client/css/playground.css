@@ -104,7 +104,9 @@ ul.menuList:nth-child(3){
 }
 
 ul.menuList:nth-child(3) > li{
-	-webkit-transform-duration: 300;
+	opacity:1;
+	-webkit-transition-duration: 3000;
+	-webkit-transform: scaleY(2);
 	display:inline-block;
 }
 
