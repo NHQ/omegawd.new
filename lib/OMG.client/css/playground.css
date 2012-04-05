@@ -171,11 +171,12 @@ li.templateSelector > h1:hover, li.layoutSelector > h1:hover {
 
 .wrapper {
 	position:absolute;
-	right:30px;
+	top:30px;
 	left: 360px;
 	width: 27%;
 	height: 22%;
-	padding:0px;	
+	padding:0px;
+	z-index: 1;
 }
 
 .wrapper:hover, wrapper:focus {
