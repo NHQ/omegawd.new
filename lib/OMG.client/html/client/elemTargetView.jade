@@ -1,5 +1,34 @@
 div(class='cssPrimitivesWrapper')
-  h1= ' <' + selected.html.tagName.toLowerCase() + '>'
+  h1= ' <' + selected.elem.tagName.toLowerCase() + '>'
+  div(id='propertySize', data-type='xy', class='cssPrimitives cssHelpers')
+    span.cssProperty Size
+    br
+    span.cssType #{'@[x,y] '}
+    span.cssSelectorXY
+      span.cssValueX
+        = selected.elem.styles.width.primitive.value.val
+      span #{' x '}
+      span.cssValueY
+        = selected.elem.styles.height.primitive.value.val
+  
+  div(id='propertyPosition', data-type='xyz', class='cssPrimitives cssHelpers')  
+    span.cssProperty Position
+    br
+    span.cssType #{'@[x,y] '}
+    span.cssSelectorXY
+      span.cssValueX
+        = parent.styles.left.primitive.value.val
+      span #{' x '}
+      span.cssValueY
+        = parent.styles.top.primitive.value.val
+    br
+    span.cssType #{'@[z] '}
+      span.cssValueZ
+        = parent.styles['z-index'].primitive.value.val
+
+  div(id='propertyBackground', data-type='multi', class='cssPrimitives cssHelpers')
+    span.cssProperty Background
+    br
   - for css in selected.css
     div(id=css.property, data-type=css.primitive.value.type, class='cssPrimitives ' + css.primitive.type)
       span.cssProperty 
