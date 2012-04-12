@@ -1,5 +1,12 @@
 div(class='cssPrimitivesWrapper')
   h1= ' <' + selected.elem.tagName.toLowerCase() + '>'
+  each style, x in styles
+    div(id=x, class='cssPrimitives')
+      span.cssProperty 
+        =x + ':'
+     each props in style
+       each prop, key in props
+         p= key
   div(id='propertySize', data-type='xy', class='cssPrimitives cssHelpers')
     span.cssProperty Size
     br
