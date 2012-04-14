@@ -6,7 +6,10 @@ div(class='cssPrimitivesWrapper')
         =x + ':'
      each props in style
        each prop, key in props
-         p= key
+         - if(selected.elem.styles[key])
+           p= selected.elem.styles[key].primitive.value.type
+         else
+           p= key
   div(id='propertySize', data-type='xy', class='cssPrimitives cssHelpers')
     span.cssProperty Size
     br
