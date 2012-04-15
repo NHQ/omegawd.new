@@ -34,6 +34,10 @@
     -webkit-perspective-origin: 50% 50%;    
     background-image: -webkit-radial-gradient(center, hsla(110,50%,50%,.65), hsla(110,80%,30%,1));
   }
+  .canvas {
+    width:100%;
+    height:100%;
+  }
   
   #stage {
     -webkit-transform-style: preserve-3d;  
@@ -175,26 +179,16 @@
 	</style>
 </head>
 <body>
+<div class='canvas'>
+  <canvas id='bg'></canvas>
+</div>
 <div class='terminal'>
-  <input type="range" class='ranger' min="-100" max="200" value="40" onchange="" id="oy" />
-  <div id='xyRanger'>
-    <canvas id='xyRangeCanvas'></canvas>
-    <div id='xyRangeFinder'></div>
-  </div>
   <div id='flip-container'>
   	<div id='flipcard'>
   	 <div class='front face'><img src='../images/moon.jpg' /></div>
   	 <div class='back face'><img src='../images/home.jpg' /></div>
   	</div>
 	</div>
-	<div class='slider'></div>
-	<div class="plane l40 xxx"></div>
-  
-	<div id='stage'>
-    <div id='shape' class='ring'>
-      <div class="plane one l40"></div>
-    </div>
-  </div>
 </div>
 </body>
 <script type='text/javascript' src='http://localhost:3333/client.deps.js'></script>
